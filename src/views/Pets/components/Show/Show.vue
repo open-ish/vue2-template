@@ -4,13 +4,15 @@
       <h2>{{ pets.label }}</h2>
       <div v-for="pet in pets" :key="pet.label">
         <v-btn
-          :color="currentPet.label === pet.label ? 'primary' : ''"
+          :color="
+            currentPet !== {} && currentPet.label === pet.label ? 'primary' : ''
+          "
           text
           @click="setCurrent(pet)"
           >{{ pet.label }}</v-btn
         >
       </div>
-      <div>
+      <div v-if="currentPet !== {}">
         <v-card
           class="mx-auto my-12"
           max-width="374"
@@ -28,28 +30,29 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue, { PropType } from "vue";
 import { Route } from "vue-router";
+import { Pet } from "../../model";
 
 export default Vue.extend({
   name: "PetsShow",
   props: {
-    pets: { default: [] },
+    pets: { default: [], type: Array as PropType<Pet[]> },
   },
   data: () => ({
-    currentPet: "",
+    currentPet: {} as Pet,
   }),
-  created() {
+  mounted() {
     const { breed } = this.$route.query;
 
     if (breed && this.pets.length) {
-      this.currentPet = this.pets.find((pet: any) => (pet.label = breed));
+      this.currentPet = this.pets.find((pet) => pet.label === breed) as Pet;
     }
   },
   methods: {
-    setCurrent(pet) {
+    setCurrent(pet: Pet) {
       this.currentPet = pet;
-      this.changeRoute(pet.to);
+      this.changeRoute(pet.to as Route);
     },
     changeRoute(route: Route) {
       const query = Object.assign(this.$route.query, route.query);
@@ -62,11 +65,11 @@ export default Vue.extend({
       });
     },
   },
-  // watch: {
-  //   $route(newValue) {
-  //     const { query } = newValue;
-  //     !query.breed && (this.currentPet = null);
-  //   },
-  // },
+  watch: {
+    $route(newValue) {
+      const { query } = newValue;
+      !query.breed && (this.currentPet = {} as Pet);
+    },
+  },
 });
 </script>

@@ -10,7 +10,8 @@ import Vue from "vue";
 import { Route } from "vue-router";
 
 import Show from "./components/Show/Show.vue";
-import * as pets from "./database";
+import { pets } from "./database";
+import { Pet } from "./model";
 
 export default Vue.extend({
   name: "Pets",
@@ -18,12 +19,10 @@ export default Vue.extend({
     Show,
   },
   data: () => ({
-    pets: [],
+    pets: [] as Pet[],
   }),
   created() {
     this.updateBread(this.$route);
-  },
-  mounted() {
     this.changeContext(this.$route);
   },
   methods: {
@@ -31,14 +30,11 @@ export default Vue.extend({
       const { query } = route;
 
       const context = query.typeId === "Dogs" ? "dogs" : "cats";
-      this.pets = pets[context] as any;
+      this.pets = pets[context];
     },
     updateBread(route: Route) {
       const newBreadcrumb = [];
       const { query, params } = route;
-      const context = query.typeId === "Dogs" ? "dogs" : "cats";
-
-      this.pets = pets[context] as any;
 
       newBreadcrumb.push({
         query: { typeId: query.typeId },
