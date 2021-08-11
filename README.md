@@ -1,4 +1,4 @@
-# vue-template - Breadcrum apprach
+# vue-template - Breadcrum apporach
 
 Hi, everyone! 👋
 
