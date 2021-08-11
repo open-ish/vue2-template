@@ -27,12 +27,12 @@ export default Vue.extend({
     Header,
   },
   data: () => ({
-    isShowHeader: false,
-
     items: [
+      //  Using finder - approach 1
+
       {
         id: 2,
-        label: "Pets",
+        label: "Pets - approach 1",
         to: null,
         children: [
           {
@@ -59,9 +59,12 @@ export default Vue.extend({
           },
         ],
       },
+
+      // Using state at breadcrumb - approach 2
+
       {
         id: 3,
-        label: "Pets2",
+        label: "Pets2 - approach 2",
         to: null,
         children: [
           {
@@ -89,6 +92,7 @@ export default Vue.extend({
         ],
       },
     ],
+    isShowHeader: false, //  Needed only to state at breadcrumb - approach 2
   }),
   methods: {
     goTo(item: any) {
@@ -96,9 +100,10 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.isShowHeader = true;
+    this.isShowHeader = true; //  Needed only to state at breadcrumb - approach 2
   },
   beforeRouteUpdate() {
+    // Needed only to state at breadcrumb - approach 2
     this.isShowHeader = false;
     this.isShowHeader = true;
   },

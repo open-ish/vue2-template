@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div>
-      <!-- Using finder -->
+      <!-- Using finder - approach 1 -->
       <v-breadcrumbs :items="breadcrumb" divider="-">
         <template v-slot:item="{ item }">
           <v-breadcrumbs-item @click="goTo(item)">
@@ -11,7 +11,7 @@
       </v-breadcrumbs>
       <v-spacer />
 
-      <!-- Using state at breadcrumb -->
+      <!-- Using state at breadcrumb - approach 2 -->
       <v-breadcrumbs :items="breadcrumb2" divider="-">
         <template v-slot:item="{ item }">
           <v-breadcrumbs-item @click="goTo(item)">
@@ -30,46 +30,48 @@ import { RawLocation } from "vue-router";
 
 export default Vue.extend({
   computed: {
-    breadcrumb2() {
-      if (!this.$route.meta?.breadcrumb2) return;
-
-      return this.$route.meta?.breadcrumb2?.state;
-    },
+    //  Using finder - approach 1
     breadcrumb() {
       if (!this.$route.meta?.breadcrumb) return;
+
       const bread = [...this.$route.meta?.breadcrumb?.initialState];
       this.$route.meta?.breadcrumb?.finder.forEach((element: finder) => {
         const { query } = this.$route;
         bread.push({
-          query: this.createQuery(element),
-          params: this.createParams(element),
+          ...this.createParamsAndQuery(element),
           name: element.name,
           label: query[element.query[element.query.length - 1]],
         });
       });
       return bread;
     },
+
+    // Using state at breadcrumb - approach 2
+    breadcrumb2() {
+      if (!this.$route.meta?.breadcrumb2) return;
+
+      return this.$route.meta?.breadcrumb2?.state;
+    },
   },
   methods: {
     goTo(item: RawLocation) {
       this.$router.push(item);
     },
-    createQuery(element: finder) {
-      const { query } = this.$route;
 
-      const arrayQuey = element.query.map((queryString) => {
-        return { [queryString]: query[queryString] };
-      });
-
-      return Object.assign({}, ...arrayQuey);
-    },
-    createParams(element: finder) {
-      const { params } = this.$route;
+    //  Using finder - approach 1
+    createParamsAndQuery(element: finder) {
+      const { params, query } = this.$route;
 
       const arrayParams = element.params.map((queryString) => {
         return { [queryString]: params[queryString] };
       });
-      return Object.assign({}, ...arrayParams);
+      const arrayQuery = element.query.map((queryString) => {
+        return { [queryString]: query[queryString] };
+      });
+      return {
+        params: Object.assign({}, ...arrayParams),
+        query: Object.assign({}, ...arrayQuery),
+      };
     },
   },
 });
