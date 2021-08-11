@@ -10,7 +10,7 @@ If you wanna, let's get in touch!
 
 - Approaches
 
-1. [Creating breadcrumb](#Breadcrumb) \
+1. [Creating breadcrumb](#Breadcrumb) 
 
 - Config
 
