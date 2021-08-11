@@ -16,12 +16,16 @@ If you wanna, let's get in touch!
 
 At this approach, the idea is to create keys at route config and treat it in breadcrumb itself. 
 
-Key files: 
+Key files: \
 [route config](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/router/pets.ts) \
 [View](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/Pets.vue) \
 [Fake database](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/database.ts)
 
 ## Approach 2 - breacrumb state
+
+At this approach, the idea is to create a breadcrumb state and change it at route changing.
+
+Key files: \
 [route config](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/router/pets2.ts) \
 [View](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/Pets2.vue) \
 [Fake database](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/database2.ts) \
