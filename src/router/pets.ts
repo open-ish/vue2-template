@@ -1,97 +1,43 @@
 import Pets from "../views/Pets/Pets.vue";
+import { bread, finder } from "./model";
 
-type bread = {
-  name: string;
-  path: string;
+const initial: bread[] = [{ label: "Início", name: "Home" }];
+
+const TYPE_FINDER = {
+  name: "PetType",
+  query: ["typeId"],
+  params: ["typeId"],
 };
 
-const initial: bread[] = [
-  { name: "Home", path: "/" },
-  { name: "Pets", path: "/pets" },
-];
+const BREED_FINDER = {
+  name: "PetType",
+  query: ["breed"],
+  params: ["breed"],
+};
 
 export const PETS = {
   name: "PetType",
-  path: "/pets/:type",
+  path: "/pets/:typeId",
   component: Pets,
   meta: {
     breadcrumb: {
-      isDynamic: true,
-      state: initial,
-      set setState(customBread: bread[]) {
-        console.log("customBread", customBread);
-        this.state = [...initial, ...customBread];
-      },
+      initialState: initial,
+      finder: [TYPE_FINDER] as finder[],
     },
   },
+  props: true,
   children: [
     {
       name: "PetBreed",
-      path: "/:breed",
+      path: "/pets/:typeId/breed/:breed",
       component: Pets,
       meta: {
         breadcrumb: {
-          isDynamic: true,
-          state: initial,
-          set setState(customBread: bread[]) {
-            console.log("customBread", customBread);
-            this.state = [...initial, ...customBread];
-          },
+          initialState: initial,
+          finder: [TYPE_FINDER, BREED_FINDER] as finder[],
         },
       },
       props: true,
     },
   ],
-  props: true,
 };
-
-// export const PETS = {
-//   name: "Pets",
-//   path: "/pets",
-//   component: Pets,
-//   meta: {
-//     // breadcrumb: {
-//     //   isDynamic: true,
-//     //   state: initial,
-//     //   set setState(customBread: bread[]) {
-//     //     console.log("customBread", customBread);
-//     //     this.state = [...initial, ...customBread];
-//     //   },
-//     // },
-//   },
-//   children: [
-//     {
-//       name: "PetType",
-//       path: "/:type",
-//       component: Pets,
-//       meta: {
-//         breadcrumb: {
-//           isDynamic: true,
-//           state: initial,
-//           set setState(customBread: bread[]) {
-//             console.log("customBread", customBread);
-//             this.state = [...initial, ...customBread];
-//           },
-//         },
-//       },
-//       props: true,
-//     },
-//     // {
-//     //   name: "PetBreed",
-//     //   path: "/:breed",
-//     //   component: Pets,
-//     //   meta: {
-//     //     breadcrumb: {
-//     //       isDynamic: true,
-//     //       state: initial,
-//     //       set setState(customBread: bread[]) {
-//     //         console.log("customBread", customBread);
-//     //         this.state = [...initial, ...customBread];
-//     //       },
-//     //     },
-//     //   },
-//     //   props: true,
-//     // },
-//   ],
-//   props: true,
-// };

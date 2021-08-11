@@ -4,7 +4,7 @@ const dogs: Pet[] = [
   {
     label: "African",
     to: {
-      name: "PetBreed",
+      name: "PetBreed2",
       params: { breed: "7777" },
       query: {
         breed: "African",
@@ -24,7 +24,7 @@ const dogs: Pet[] = [
   {
     label: "Boxer",
     to: {
-      name: "PetBreed",
+      name: "PetBreed2",
       params: { breed: "8888" },
       query: {
         breed: "Boxer",

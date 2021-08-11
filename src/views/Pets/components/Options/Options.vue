@@ -10,7 +10,7 @@ import Vue from "vue";
 import { NavigationGuardNext, Route } from "vue-router";
 
 export default Vue.extend({
-  name: "PetsShow",
+  name: "PetsOptions",
   data: () => ({
     currentPet: "",
   }),
@@ -22,8 +22,8 @@ export default Vue.extend({
     const { query, params } = to;
     this.setPet(query.t as string);
 
-    this.$route?.meta?.breadcrumb &&
-      (this.$route.meta.breadcrumb.setState = [{ query, params }]);
+    this.$route?.meta?.breadcrumb2 &&
+      (this.$route.meta.breadcrumb2.setState = [{ query, params }]);
     next();
   },
   methods: {

@@ -11,7 +11,7 @@
       </v-treeview>
     </v-navigation-drawer>
     <v-main>
-      <Header v-if="load" />
+      <Header v-if="isShowHeader" />
       <router-view />
     </v-main>
   </v-app>
@@ -27,24 +27,9 @@ export default Vue.extend({
     Header,
   },
   data: () => ({
-    load: false,
+    isShowHeader: false,
 
     items: [
-      {
-        id: 1,
-        label: "Applications :",
-        to: { name: "PetType", params: { type: "app" } },
-        // children: [
-        //   { id: 2, label: "Calendar : app",
-        //     to: {
-        //       label: 'PetBreed',
-        //       params: {  }
-        //     }
-        //   },
-        //   { id: 3, label: "Chrome : app" },
-        //   { id: 4, label: "VS : app" },
-        // ],
-      },
       {
         id: 2,
         label: "Pets",
@@ -55,7 +40,10 @@ export default Vue.extend({
             label: "Dogs",
             to: {
               name: "PetType",
-              params: { type: "dogs" },
+              params: { typeId: 123 },
+              query: {
+                typeId: "Dogs",
+              },
             },
           },
           {
@@ -63,7 +51,10 @@ export default Vue.extend({
             label: "Cats",
             to: {
               name: "PetType",
-              params: { type: "cats" },
+              params: { typeId: 456 },
+              query: {
+                typeId: "Cats",
+              },
             },
           },
         ],
@@ -105,11 +96,11 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.load = true;
+    this.isShowHeader = true;
   },
   beforeRouteUpdate() {
-    this.load = false;
-    this.load = true;
+    this.isShowHeader = false;
+    this.isShowHeader = true;
   },
 });
 </script>
