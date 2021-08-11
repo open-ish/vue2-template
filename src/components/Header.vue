@@ -37,10 +37,11 @@ export default Vue.extend({
       const bread = [...this.$route.meta?.breadcrumb?.initialState];
       this.$route.meta?.breadcrumb?.finder.forEach((element: finder) => {
         const { query } = this.$route;
+        const getLastLabel = element.query[element.query.length - 1];
         bread.push({
           ...this.createParamsAndQuery(element),
           name: element.name,
-          label: query[element.query[element.query.length - 1]],
+          label: query[getLastLabel],
         });
       });
       return bread;

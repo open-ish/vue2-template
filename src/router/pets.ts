@@ -10,9 +10,9 @@ const TYPE_FINDER = {
 };
 
 const BREED_FINDER = {
-  name: "PetType",
-  query: ["breed"],
-  params: ["breed"],
+  name: "PetBreed",
+  query: ["typeId", "breed"],
+  params: ["typeId", "breed"],
 };
 
 export const PETS = {
