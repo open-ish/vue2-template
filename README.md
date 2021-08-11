@@ -1,14 +1,19 @@
-# vue-template - Breadcrum apprach
+# vue-template - Nice approach to use in VueJS projects ❤️
 
 Hi, everyone! 👋
 
-This is a nice repo with some approaches to use in VueJS (2.x) projects. [You may find more here](https://github.com/open-ish/vue2-template) or change by the branch at GitHub.
+This is a nice repo with some approaches to use in VueJS (2.x) projects.
 
 If you wanna, let's get in touch! 
 
 ## Summary
 
+- Approaches
+
 1. [Creating breadcrumb](#Breadcrumb) \
+
+- Config
+
 2. [Pre-requirements](#Installation)
 
 ## Breadcrumb
@@ -17,29 +22,29 @@ Here, you will find two approaches to creating breadcrum with VueJS and VueRotue
 
 [Seeing codebase here](https://github.com/open-ish/vue2-template/tree/feat/add-breadcrumb) 
 
-## Installation
+### Installation
 
-### Project setup
+#### Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 yarn build
 ```
 
-### Run your unit tests
+#### Run your unit tests
 ```
 yarn test:unit
 ```
 
-### Lints and fixes files
+#### Lints and fixes files
 ```
 yarn lint
 ```
