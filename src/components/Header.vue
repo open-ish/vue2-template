@@ -2,7 +2,7 @@
   <header class="header">
     <div>
       <!-- Using finder - approach 1 -->
-      <v-breadcrumbs :items="breadcrumb" divider="-">
+      <v-breadcrumbs :items="breadcrumb" divider=">">
         <template v-slot:item="{ item }">
           <v-breadcrumbs-item @click="goTo(item)">
             {{ item.label }}
@@ -37,10 +37,12 @@ export default Vue.extend({
 
       const bread = [...this.$route.meta?.breadcrumb?.initialState];
       this.$route.meta?.breadcrumb?.finder.forEach((element: finder) => {
+        //finder array added at router config
+
         const { query } = this.$route;
         const getLastLabel = element.query[element.query.length - 1];
         bread.push({
-          name: element.name, //PetType
+          name: element.name, //(e.g. PetType)
           label: query[getLastLabel],
           ...this.createParamsAndQuery(element),
         });
@@ -49,6 +51,7 @@ export default Vue.extend({
     },
 
     // Using state at breadcrumb - approach 2 - It's not working very well yet :/
+
     // breadcrumb2() {
     //   if (!this.$route.meta?.breadcrumb2) return;
 
@@ -65,16 +68,16 @@ export default Vue.extend({
       const { params, query } = this.$route;
 
       const arrayParams = element.params.map((queryString) => {
-        //'typeId'
-        return { [queryString]: params[queryString] };
+        //(e.g. 'typeId')
+        return { [queryString]: params[queryString] }; //{typeId: '123' | '456'}
       });
       const arrayQuery = element.query.map((queryString) => {
-        //'typeId'
-        return { [queryString]: query[queryString] };
+        //(e.g. 'typeId')
+        return { [queryString]: query[queryString] }; //{typeId: 'Dogs' | 'Cats'}
       });
       return {
-        params: Object.assign({}, ...arrayParams), // params: {typeId: '123'}
-        query: Object.assign({}, ...arrayQuery), // query: {typeId: 'Dogs'}
+        params: Object.assign({}, ...arrayParams), // (e.g. params: {typeId: '123'})
+        query: Object.assign({}, ...arrayQuery), // (e.g. query: {typeId: 'Dogs'})
       };
     },
   },

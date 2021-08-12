@@ -2,7 +2,7 @@ import Pets2 from "../views/Pets/Pets2.vue";
 import { bread } from "./model";
 
 // Using state at breadcrumb - approach 2 - It's not working very well yet :/
-const initialData: bread[] = [{ label: "Início", name: "Home" }];
+const initialData: bread[] = [{ label: "Home", name: "Home" }];
 
 export const PETS2 = {
   name: "PetType2",
@@ -10,7 +10,7 @@ export const PETS2 = {
   component: Pets2,
   meta: {
     breadcrumb2: {
-      state: initialData,
+      state: initialData, //home
       set setState(customBread: bread[]) {
         this.state = [...initialData, ...customBread];
       },
