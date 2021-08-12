@@ -14,10 +14,11 @@ If you wanna, let's get in touch!
 
 ## Approach 1 - finder field
 
-At this approach, the idea is to create keys at route config and treat it in breadcrumb itself. 
+At this approach, the idea is to create keys (which will be found at `finders array`) at route config and treat it in breadcrumb component itself. Here we'll use the join between `this.$route` (route instance) with finders keys.
 
 Key files: \
 [route config](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/router/pets.ts) \
+[Breadcrumb](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/components/Header.vue) \
 [View](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/Pets.vue) \
 [Fake database](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/database.ts)
 
@@ -28,6 +29,7 @@ At this approach, the idea is to create a breadcrumb state and change it at rout
 Key files: \
 [route config](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/router/pets2.ts) \
 [View](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/Pets2.vue) \
+[Breadcrumb](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/components/Header.vue) \
 [Fake database](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/database2.ts) \
 [App](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/App.vue)
 
