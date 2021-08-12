@@ -2,7 +2,7 @@
 
 Hi, everyone! 👋
 
-This is a nice repo with some approaches to use in VueJS (2.x) projects.
+This is a nice repo with some approaches to use in VueJS (2.x | 3.x) projects.
 
 If you wanna, let's get in touch! 
 
