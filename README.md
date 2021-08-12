@@ -8,8 +8,8 @@ If you wanna, let's get in touch!
 
 ## Summary
 
-1. [Approach 1 - Using finder field at router config 🚀](#Approach-1---finder-field) \
-2. [Approach 2 - Creating breadcrumb state at route config and changing it at routes](#Approach-2---breadcrumb-state) \
+1. [Approach 1 - Using finder field at router config 🚀](#Approach-1---finder-field) - `The best one 🎉`!
+2. [Approach 2 - Creating breadcrumb state at route config and changing it at routes](#Approach-2---breadcrumb-state) - It's not working very well yet :/
 3. [Pre-requirements](#Installation)
 
 ## Approach 1 - finder field
