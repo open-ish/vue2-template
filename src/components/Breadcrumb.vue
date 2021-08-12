@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <div class="breadcrum-wrapper">
     <div>
       <!-- Using finder - approach 1 -->
       <v-breadcrumbs :items="breadcrumb" divider=">">
@@ -21,7 +21,7 @@
         </template>
       </v-breadcrumbs> -->
     </div>
-  </header>
+  </div>
 </template>
 
 <script lang="ts">

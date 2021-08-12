@@ -11,7 +11,7 @@
       </v-treeview>
     </v-navigation-drawer>
     <v-main>
-      <Header v-if="isShowHeader" />
+      <Breadcrumb v-if="isShowBreadcrumb" />
       <router-view />
     </v-main>
   </v-app>
@@ -19,12 +19,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Header from "./components/Header.vue";
+import Breadcrumb from "./components/Breadcrumb.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
-    Header,
+    Breadcrumb,
   },
   data: () => ({
     items: [
@@ -92,7 +92,7 @@ export default Vue.extend({
         ],
       },
     ],
-    isShowHeader: false, //  Needed only to state at breadcrumb - approach 2
+    isShowBreadcrumb: false, //  Needed only to state at breadcrumb - approach 2
   }),
   methods: {
     goTo(item: any) {
@@ -100,12 +100,12 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.isShowHeader = true; //  Needed only to state at breadcrumb - approach 2
+    this.isShowBreadcrumb = true; //  Needed only to state at breadcrumb - approach 2
   },
   beforeRouteUpdate() {
     // Needed only to state at breadcrumb - approach 2
-    this.isShowHeader = false;
-    this.isShowHeader = true;
+    this.isShowBreadcrumb = false;
+    this.isShowBreadcrumb = true;
   },
 });
 </script>
