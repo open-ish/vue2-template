@@ -1,4 +1,4 @@
-# vue-template - Nice approach to use in VueJS projects ❤️
+# vue-template - Nice approaches to use in VueJS projects ❤️
 
 Hi, everyone! 👋
 
