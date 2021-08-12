@@ -6,6 +6,10 @@ This is a nice repo with some approaches to use in VueJS (2.x) projects. [You ma
 
 If you wanna, let's get in touch!
 
+## What're we gonna use? 
+- [VueJS (2.x | 3.x)](https://vuejs.org/) 
+- [VueRouter](https://router.vuejs.org/)
+
 ## Summary
 
 1. [Approach 1 - Using finder field at router config 🚀](#Approach-1---finder-field) - `The best one 🎉`!
