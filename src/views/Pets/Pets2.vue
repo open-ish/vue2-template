@@ -1,6 +1,7 @@
 <template>
   <div class="pets-view">
     <h1>This is a Pets page - Using state at breadcrumb - approach 2</h1>
+    <p>It's not working very well yet :/</p>
     <Show :pets="pets" />
   </div>
 </template>

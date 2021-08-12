@@ -11,14 +11,15 @@
       </v-breadcrumbs>
       <v-spacer />
 
-      <!-- Using state at breadcrumb - approach 2 -->
-      <v-breadcrumbs :items="breadcrumb2" divider="-">
+      <!-- Using state at breadcrumb - approach 2 - It's not working very well yet :/ -->
+
+      <!-- <v-breadcrumbs :items="breadcrumb2" divider="-">
         <template v-slot:item="{ item }">
           <v-breadcrumbs-item @click="goTo(item)">
             {{ item.label }}
           </v-breadcrumbs-item>
         </template>
-      </v-breadcrumbs>
+      </v-breadcrumbs> -->
     </div>
   </header>
 </template>
@@ -39,20 +40,20 @@ export default Vue.extend({
         const { query } = this.$route;
         const getLastLabel = element.query[element.query.length - 1];
         bread.push({
-          ...this.createParamsAndQuery(element),
-          name: element.name,
+          name: element.name, //PetType
           label: query[getLastLabel],
+          ...this.createParamsAndQuery(element),
         });
       });
       return bread;
     },
 
-    // Using state at breadcrumb - approach 2
-    breadcrumb2() {
-      if (!this.$route.meta?.breadcrumb2) return;
+    // Using state at breadcrumb - approach 2 - It's not working very well yet :/
+    // breadcrumb2() {
+    //   if (!this.$route.meta?.breadcrumb2) return;
 
-      return this.$route.meta?.breadcrumb2?.state;
-    },
+    //   return this.$route.meta?.breadcrumb2?.state;
+    // },
   },
   methods: {
     goTo(item: RawLocation) {
@@ -64,14 +65,16 @@ export default Vue.extend({
       const { params, query } = this.$route;
 
       const arrayParams = element.params.map((queryString) => {
+        //'typeId'
         return { [queryString]: params[queryString] };
       });
       const arrayQuery = element.query.map((queryString) => {
+        //'typeId'
         return { [queryString]: query[queryString] };
       });
       return {
-        params: Object.assign({}, ...arrayParams),
-        query: Object.assign({}, ...arrayQuery),
+        params: Object.assign({}, ...arrayParams), // params: {typeId: '123'}
+        query: Object.assign({}, ...arrayQuery), // query: {typeId: 'Dogs'}
       };
     },
   },

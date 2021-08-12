@@ -1,6 +1,7 @@
 import Pets2 from "../views/Pets/Pets2.vue";
 import { bread } from "./model";
 
+// Using state at breadcrumb - approach 2 - It's not working very well yet :/
 const initialData: bread[] = [{ label: "Início", name: "Home" }];
 
 export const PETS2 = {

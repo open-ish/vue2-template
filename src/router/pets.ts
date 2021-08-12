@@ -1,6 +1,7 @@
 import Pets from "../views/Pets/Pets.vue";
 import { bread, finder } from "./model";
 
+//  Using finder - approach 1
 const initial: bread[] = [{ label: "Início", name: "Home" }];
 
 const TYPE_FINDER = {
