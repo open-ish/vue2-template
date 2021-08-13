@@ -56,17 +56,17 @@ export default Vue.extend({
     createParamsAndQuery(finder: finder) {
       const { params, query } = this.$route;
 
-      const arrayParams = finder.params.map((queryString) => {
+      const paramsMapped = finder.params.map((paramsString) => {
         //(e.g. 'typeId')
-        return { [queryString]: params[queryString] }; //{typeId: '123' | '456'}
+        return { [paramsString]: params[paramsString] }; //{typeId: '123' | '456'}
       });
-      const arrayQuery = finder.query.map((queryString) => {
+      const queryMapped = finder.query.map((queryString) => {
         //(e.g. 'typeId')
         return { [queryString]: query[queryString] }; //{typeId: 'Dogs' | 'Cats'}
       });
       return {
-        params: Object.assign({}, ...arrayParams), // (e.g. params: {typeId: '123'})
-        query: Object.assign({}, ...arrayQuery), // (e.g. query: {typeId: 'Dogs'})
+        params: Object.assign({}, ...paramsMapped), // (e.g. params: {typeId: '123'})
+        query: Object.assign({}, ...queryMapped), // (e.g. query: {typeId: 'Dogs'})
       };
     },
   },
