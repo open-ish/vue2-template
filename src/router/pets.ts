@@ -24,12 +24,12 @@ export const PETS = {
     breadcrumb: {
       initialState: initial,
       /* 
-        finder array will be used as reference to create the breadcrumb by param and query keys
+        finders array will be used as reference to create the breadcrumb by param and query keys
 
         The array order will define the breadcrum order, so: 
-        bread[finder[0]] > bread[finder[1]] ---- (e.g. Home > Dogs)
+        bread[finders[0]] > bread[finders[1]] ---- (e.g. Home > Dogs)
       */
-      finder: [TYPE_FINDER],
+      finders: [TYPE_FINDER],
     },
   },
   props: true,
@@ -43,12 +43,12 @@ export const PETS = {
           initialState: initial,
 
           /* 
-          finder array will be used as reference to create the breadcrumb by params and query keys
+          finders array will be used as reference to create the breadcrumb by params and query keys
           The array order will define the breadcrum order, so: 
 
-          bread[finder[0]] > bread[finder[1]] > bread[finder[2]] ---- (e.g. Home > Dogs > Boxer)
+          bread[finders[0]] > bread[finders[1]] > bread[finders[2]] ---- (e.g. Home > Dogs > Boxer)
           */
-          finder: [TYPE_FINDER, BREED_FINDER],
+          finders: [TYPE_FINDER, BREED_FINDER],
         },
       },
       props: true,

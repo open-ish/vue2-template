@@ -35,7 +35,7 @@ export default Vue.extend({
           name: "AppsRoute",
         },
       },
-      //  Using finder - approach 1
+      //  Using finders - approach 1
       {
         id: 2,
         label: "Pets - approach 1",

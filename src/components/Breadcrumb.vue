@@ -1,10 +1,10 @@
 <template>
   <div class="breadcrum-wrapper">
     <div>
-      <!-- Using finder - approach 1 -->
+      <!-- Using finders - approach 1 -->
       <v-breadcrumbs :items="breadcrumb" divider=">">
         <template v-slot:item="{ item }">
-          <v-breadcrumbs-item @click="goTo(item)">
+          <v-breadcrumbs-item @click="goTo(item)" style="cursor: pointer">
             {{ item.label }}
           </v-breadcrumbs-item>
         </template>
@@ -21,22 +21,29 @@ import { RawLocation } from "vue-router";
 
 export default Vue.extend({
   computed: {
-    //  Using finder - approach 1
+    //  Using finders - approach 1
     breadcrumb() {
-      if (!this.$route.meta?.breadcrumb) return;
+      const breadcrumbFromRoute = this.$route.meta?.breadcrumb;
+      if (!breadcrumbFromRoute) return;
 
-      const bread = [...this.$route.meta?.breadcrumb?.initialState];
-      this.$route.meta.breadcrumb.finder.forEach((element: finder) => {
-        //finder array added at router config
+      const { finders, initialState } = breadcrumbFromRoute;
 
-        const { query } = this.$route;
-        const getLastLabel = element.query[element.query.length - 1];
-        bread.push({
-          name: element.name, //(e.g. PetType)
-          label: query[getLastLabel],
-          ...this.createParamsAndQuery(element),
-        });
-      });
+      const bread = finders?.length
+        ? (finders.map((finder: finder) => {
+            //finders array added at router config
+
+            const { query } = this.$route;
+            const getLastLabel = finder.query[finder.query.length - 1];
+            return {
+              name: finder.name, //(e.g. PetType)
+              label: query[getLastLabel],
+              ...this.createParamsAndQuery(finder),
+            };
+          }) as finder[])
+        : [];
+
+      bread.unshift(...initialState);
+
       return bread;
     },
   },
@@ -45,15 +52,15 @@ export default Vue.extend({
       this.$router.push(item);
     },
 
-    //  Using finder - approach 1
-    createParamsAndQuery(element: finder) {
+    //  Using finders - approach 1
+    createParamsAndQuery(finder: finder) {
       const { params, query } = this.$route;
 
-      const arrayParams = element.params.map((queryString) => {
+      const arrayParams = finder.params.map((queryString) => {
         //(e.g. 'typeId')
         return { [queryString]: params[queryString] }; //{typeId: '123' | '456'}
       });
-      const arrayQuery = element.query.map((queryString) => {
+      const arrayQuery = finder.query.map((queryString) => {
         //(e.g. 'typeId')
         return { [queryString]: query[queryString] }; //{typeId: 'Dogs' | 'Cats'}
       });

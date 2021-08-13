@@ -13,10 +13,10 @@ If you wanna, let's get in touch!
 
 ## Summary
 
-1. [Approach 1 - Using finder field at router config 🚀](#Approach-1---finder-field) - `The best one 🎉`!
+1. [Approach 1 - Using finders field at router config 🚀](#Approach-1---finders-field) - `The best one 🎉`!
 2. [Pre-requirements](#Installation)
 
-## Approach 1 - finder field
+## Approach 1 - finders field
 
 At this approach, the idea is to create keys (which will be found at `finders array`) at route config and treat it in breadcrumb component itself. Here we'll use the join between `this.$route` (route instance) with finders keys.
 
