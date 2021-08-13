@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import { PETS } from "./pets";
-import { PETS2 } from "./pets2";
 
 Vue.use(VueRouter);
 
@@ -13,7 +12,6 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   PETS,
-  PETS2,
 ];
 
 const router = new VueRouter({

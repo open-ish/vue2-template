@@ -11,7 +11,7 @@
       </v-treeview>
     </v-navigation-drawer>
     <v-main>
-      <Breadcrumb v-if="isShowBreadcrumb" />
+      <Breadcrumb />
       <router-view />
     </v-main>
   </v-app>
@@ -28,8 +28,14 @@ export default Vue.extend({
   },
   data: () => ({
     items: [
+      {
+        id: 1,
+        label: "Apps",
+        to: {
+          name: "AppsRoute",
+        },
+      },
       //  Using finder - approach 1
-
       {
         id: 2,
         label: "Pets - approach 1",
@@ -59,53 +65,12 @@ export default Vue.extend({
           },
         ],
       },
-
-      // Using state at breadcrumb - approach 2
-
-      {
-        id: 3,
-        label: "Pets2 - approach 2",
-        to: null,
-        children: [
-          {
-            id: 6,
-            label: "Dogs",
-            to: {
-              name: "PetType2",
-              params: { typeId: 123 },
-              query: {
-                typeId: "Dogs",
-              },
-            },
-          },
-          {
-            id: 10,
-            label: "Cats",
-            to: {
-              name: "PetType2",
-              params: { typeId: 456 },
-              query: {
-                typeId: "Cats",
-              },
-            },
-          },
-        ],
-      },
     ],
-    isShowBreadcrumb: false, //  Needed only to state at breadcrumb - approach 2
   }),
   methods: {
     goTo(item: any) {
       this.$router.replace({ ...item.to });
     },
-  },
-  mounted() {
-    this.isShowBreadcrumb = true; //  Needed only to state at breadcrumb - approach 2
-  },
-  beforeRouteUpdate() {
-    // Needed only to state at breadcrumb - approach 2
-    this.isShowBreadcrumb = false;
-    this.isShowBreadcrumb = true;
   },
 });
 </script>

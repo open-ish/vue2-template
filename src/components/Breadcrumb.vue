@@ -10,16 +10,6 @@
         </template>
       </v-breadcrumbs>
       <v-spacer />
-
-      <!-- Using state at breadcrumb - approach 2 - It's not working very well yet :/ -->
-
-      <!-- <v-breadcrumbs :items="breadcrumb2" divider="-">
-        <template v-slot:item="{ item }">
-          <v-breadcrumbs-item @click="goTo(item)">
-            {{ item.label }}
-          </v-breadcrumbs-item>
-        </template>
-      </v-breadcrumbs> -->
     </div>
   </div>
 </template>
@@ -36,7 +26,7 @@ export default Vue.extend({
       if (!this.$route.meta?.breadcrumb) return;
 
       const bread = [...this.$route.meta?.breadcrumb?.initialState];
-      this.$route.meta?.breadcrumb?.finder.forEach((element: finder) => {
+      this.$route.meta.breadcrumb.finder.forEach((element: finder) => {
         //finder array added at router config
 
         const { query } = this.$route;
@@ -49,14 +39,6 @@ export default Vue.extend({
       });
       return bread;
     },
-
-    // Using state at breadcrumb - approach 2 - It's not working very well yet :/
-
-    // breadcrumb2() {
-    //   if (!this.$route.meta?.breadcrumb2) return;
-
-    //   return this.$route.meta?.breadcrumb2?.state;
-    // },
   },
   methods: {
     goTo(item: RawLocation) {
