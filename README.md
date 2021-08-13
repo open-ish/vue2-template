@@ -20,6 +20,8 @@ If you wanna, let's get in touch!
 
 At this approach, the idea is to create keys (which will be found at `finders array`) at route config and treat it in breadcrumb component itself. Here we'll use the join between `this.$route` (route instance) with finders keys.
 
+In other words, the developer will only add `finders array into each router, files inside /router, and they will be used for the Breadcrumb component.  The best practice will be to put the breadcrumb validator into a helper file.
+
 Key files: \
 [route config](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/router/pets.ts) \
 [Breadcrumb](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/components/Breadcrumb.vue) \
