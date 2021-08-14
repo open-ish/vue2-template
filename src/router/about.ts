@@ -1,16 +1,16 @@
-import Apps from "@/views/Apps/Apps.vue";
+import About from "@/views/About/About.vue";
 
 import { bread } from "./model";
 
 const initial: bread[] = [
   { label: "Home", name: "Home" },
-  { label: "Apps", name: "AppsRoute" },
+  { label: "About", name: "AboutRoute" },
 ];
 
-export const APPS = {
-  name: "AppsRoute",
-  path: "/apps",
-  component: Apps,
+export const ABOUT = {
+  name: "AboutRoute",
+  path: "/about",
+  component: About,
   meta: {
     breadcrumb: {
       initialState: initial,

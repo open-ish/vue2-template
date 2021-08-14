@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import { PETS } from "./pets";
-import { APPS } from "./apps";
+import { ABOUT } from "./about";
 
 Vue.use(VueRouter);
 
@@ -13,7 +13,7 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   PETS,
-  APPS,
+  ABOUT,
 ];
 
 const router = new VueRouter({

@@ -30,9 +30,9 @@ export default Vue.extend({
     items: [
       {
         id: 1,
-        label: "Apps",
+        label: "About",
         to: {
-          name: "AppsRoute",
+          name: "AboutRoute",
         },
       },
       //  Using finders - approach 1
