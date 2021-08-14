@@ -28,6 +28,8 @@ Key files: \
 [View](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/Pets.vue) \
 [Fake database](https://github.com/open-ish/vue2-template/blob/feat/add-breadcrumb/src/views/Pets/database.ts)
 
+[You can also watch a video about it here](https://youtu.be/6G2fM9r8fJs) 🎥
+
 ## Installation
 
 ### Project setup
