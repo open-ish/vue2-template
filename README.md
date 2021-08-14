@@ -21,7 +21,8 @@ If you wanna, let's get in touch!
 
 Here, you will find two approaches to creating breadcrum with VueJS and VueRotuer, the first idea is to create keys at route config and treat it in breadcrumb itself. Regarding secondapproach, the idea is to create a breadcrumb state and change it at route changing.
 
-[Seeing codebase here](https://github.com/open-ish/vue2-template/tree/feat/add-breadcrumb) 
+- [Seeing codebase here](https://github.com/open-ish/vue2-template/tree/feat/add-breadcrumb) 
+- [You can also watch a video about it here](https://youtu.be/6G2fM9r8fJs) 🎥
 
 ## Multi Layouts
 
