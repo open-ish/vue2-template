@@ -11,7 +11,7 @@ If you wanna, let's get in touch!
 - Approaches
 
 1. [Creating breadcrumb](#Breadcrumb) 
-2. [Creating multi layouts on Vue SPAs(2.x | 3.x)](Multi-Layouts) 
+2. [Creating multi layouts on Vue SPAs](Multi-Layouts) 
 
 - Config
 
