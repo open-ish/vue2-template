@@ -13,10 +13,10 @@ If you wanna, let's get in touch!
 
 ## Summary
 
-1. [Loading application smartly](#Loading-application-smartly)
+1. [Loading application smartly - glogal data](#Loading-application-smartly---global-data)
 2. [Pre-requirements](#Installation)
 
-## Loading application smartly
+## Loading application smartly - global data
 
 As a developer, you probably have noticed that there are differences between data that we have in applications.
 
