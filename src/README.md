@@ -1,4 +1,4 @@
-# vue-template - Loading application smartly
+# vue-template - Loading application smartly (Global data)
 
 Hi, everyone! 👋
 
