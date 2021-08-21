@@ -28,6 +28,8 @@ As crazy it sounds, we can easily apply it at the Vue applications, but I have u
 
 [You can see the PR with key files here](https://github.com/open-ish/vue2-template/pull/2)
 
+[You can also watch a video about it here](https://youtu.be/WZu4SE_Her0) 🎥
+
 ## Installation
 
 ### Project setup
