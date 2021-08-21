@@ -12,6 +12,7 @@ If you wanna, let's get in touch!
 
 1. [Creating breadcrumb](#Breadcrumb) 
 2. [Creating multi layouts on Vue SPAs](Multi-Layouts) 
+3. [Loading application smartly](#Loading-application-smartly)
 
 - Config
 
@@ -27,6 +28,13 @@ Here, you will find two approaches to creating breadcrum with VueJS and VueRotue
 ## Multi Layouts
 
 [Useful case](https://github.com/open-ish/nutris) - [article](https://dev.to/tassiofront/criando-multi-layouts-em-spa-s-vue-2-x-ou-3-x-5dfm)
+
+
+## Loading application smartly
+
+Sometimes do you have problems with async global information, including using this information in another async request? This approach might help you!
+
+- [Seeing codebase here](https://github.com/open-ish/vue2-template/tree/feat/sensible-data-first/src)
 
 ### Installation
 
