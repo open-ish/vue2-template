@@ -4,11 +4,11 @@
     <br />
 
     <div v-once>
-      Using data smartly 🎉:<strong> {{ this.userName }} </strong>
+      Using data smartly 🎉:<strong> {{ userName }} </strong>
     </div>
     <br />
     <div v-once>
-      Using data unsmartly: <strong> {{ this.unsmartUserName }} </strong>
+      Using data unsmartly: <strong> {{ unsmartUserName }} </strong>
     </div>
   </v-container>
 </template>
