@@ -3,32 +3,61 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+const helperService = () => {
+  return new Promise((resolve, reject) => {
+    fetch("https://randomuser.me/api/")
+      .then((res) => res.json())
+      .then((user) => {
+        resolve(user);
+      })
+      .catch(() => {
+        reject("something bad has happened :/ ");
+      });
+  });
+};
+
+const emptyUser = "sorry, it's empty 😔 ";
+
 export default new Vuex.Store({
   state: {
-    userData: null,
+    unsmartUserData: {} as any,
+    userData: {} as any,
   },
   getters: {
-    user(state) {
-      return state.userData;
+    unsmartUserName(state) {
+      return state.unsmartUserData?.results?.[0]?.name?.first || emptyUser;
+    },
+
+    userName(state) {
+      return state.userData?.results?.[0]?.name?.first || emptyUser;
     },
   },
   mutations: {
+    setUserDataUnsmatly(state, user) {
+      state.unsmartUserData = user;
+    },
+
     setUserData(state, user) {
       state.userData = user;
     },
   },
   actions: {
+    async getUserDataUnsmatly({ commit }) {
+      try {
+        const data = await helperService();
+        commit("setUserDataUnsmatly", data);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
     async getUserData({ commit }) {
-      return new Promise((resolve, reject) => {
-        fetch("https://randomuser.me/api/")
-          .then((res) => res.json())
-          .then((user) => {
-            resolve(commit("setUserData", user));
-          })
-          .catch(() => {
-            reject(console.error("something bad has happened :/ "));
-          });
-      });
+      try {
+        const data = await helperService();
+        commit("setUserData", data);
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 });
