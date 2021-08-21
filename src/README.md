@@ -26,6 +26,8 @@ It's really important to `understand the relevance/importance of each data and c
 
 As crazy it sounds, we can easily apply it at the Vue applications, but I have used all that context because the most important thing here is to understand the reason. And that approach will avoid that you have many async problems.
 
+[You can see the PR with key files here](https://github.com/open-ish/vue2-template/pull/1/files)
+
 ## Installation
 
 ### Project setup
