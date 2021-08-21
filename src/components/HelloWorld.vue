@@ -78,7 +78,17 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "HelloWorld",
-
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    },
+  },
+  created() {
+    console.log(
+      "Data is also here! - HelloWorld component - 😱!",
+      this.user.results[0].name
+    );
+  },
   data: () => ({
     ecosystem: [
       {

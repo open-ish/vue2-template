@@ -3,7 +3,7 @@
     <v-app-bar app color="primary" dark>
       <div>Vue Template</div>
     </v-app-bar>
-
+    {{ user }}
     <v-main>
       <router-view />
     </v-main>
@@ -15,9 +15,16 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "App",
-
-  data: () => ({
-    //
-  }),
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    },
+  },
+  created() {
+    console.log(
+      "Data is already here! - App component - 😱!",
+      this.user.results[0].name
+    );
+  },
 });
 </script>

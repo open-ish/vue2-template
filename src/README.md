@@ -9,6 +9,7 @@ If you wanna, let's get in touch!
 ## What're we gonna use?
 
 - [VueJS](https://vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
 
 ## Summary
 
@@ -19,9 +20,9 @@ If you wanna, let's get in touch!
 
 As a developer, you probably have noticed that there are differences between data that we have in applications.
 
-For example, if you imagine some e-commerce, we would have `user data`, cart data, catalogue data, etc. Of course, the kind of data changes by each application, but all applications will have a kind of `data scale relevance - I mean, some data are more important than others`. So, if you put it in mind, probably, `user data` will be the most important data in our example, and this happens because `user data` can be used to get all other data - `of course, it depends on the project architecture`.
+For example, if you imagine some e-commerce, we could have `user data`, cart data, catalogue data, etc. Of course, the kind of data changes by each application, but all applications will have a kind of `data scale relevance - I mean, some data are more important than others`. So, if you put it in mind, probably, `user data` will be the most important data in our example, and this happens because `user data` can be used to get all other data - `of course, it will depend on the project architecture`.
 
-It's really important to `understand the relevance/importance of each data and create our application respecting it`. So, again, let's get the e-commerce example. If the `user data` can be necessary to get all (or almost) other data, we need to make sure the `user data` is available as soon as possible. Because if we don't do that, we can have a lot of `async problems` with our applications.
+It's really important to `understand the relevance/importance of each data and create our application respecting it`. So, again, let's get the e-commerce example. If the `user data` can be necessary to get all (or almost) other data, we need to make sure the `user data` is available as soon as possible. Because if we don't do that, we can have a lot of `async problems` with our application.
 
 As crazy it sounds, we can easily apply it at the Vue applications, but I have used all that context because the most important thing here is to understand the reason. And that approach will avoid that you have many async problems.
 
