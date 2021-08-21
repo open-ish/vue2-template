@@ -23,6 +23,7 @@ If you wanna, let's get in touch!
 Here, you will find two approaches to creating breadcrum with VueJS and VueRotuer, the first idea is to create keys at route config and treat it in breadcrumb itself. Regarding secondapproach, the idea is to create a breadcrumb state and change it at route changing.
 
 - [Seeing codebase here](https://github.com/open-ish/vue2-template/tree/feat/add-breadcrumb) 
+- [You can see the PR with key files here](https://github.com/open-ish/vue2-template/pull/1/files)
 - [You can also watch a video about it here](https://youtu.be/6G2fM9r8fJs) 🎥
 
 ## Multi Layouts
@@ -35,6 +36,7 @@ Here, you will find two approaches to creating breadcrum with VueJS and VueRotue
 Sometimes do you have problems with async global information, including using this information in another async request? This approach might help you!
 
 - [Seeing codebase here](https://github.com/open-ish/vue2-template/tree/feat/sensible-data-first/src)
+- [You can see the PR with key files here](https://github.com/open-ish/vue2-template/pull/2/files)
 
 ### Installation
 
