@@ -1,4 +1,4 @@
-# vue-template - Breadcrumb apporach
+# vue-template - Loading application smartly
 
 Hi, everyone! 👋
 
