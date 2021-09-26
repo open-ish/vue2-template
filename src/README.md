@@ -17,8 +17,7 @@ If you wanna, let's get in touch!
 
 ## What does it solve?
 
-Once the application gets huge, keep it with good performance is one of the most challenging. A good approach that helps us is to create small chunks and get them smartly. Getting components async/lazy and choose the right moment to do it can help us a lot.
-vue-cli (using behind the scenes Vue and webpack) give us a nice approach to delay some chunk and reuse them when they are called in more then one place.
+Once the application gets huge, keep it with good performance is one of the most challenging. A good approach that helps us is to create small chunks and get them smartly. Getting components async/lazy and choose the right moment to do it can help us a lot. vue-cli (using behind the scenes Vue and webpack) give us a nice approach to delay some chunks and reuse them when they are called in more than one place.
 
 The best part about it is easiness. You only will need to `change the way you are importing components` and combine it with a `v-if directive`. Let's take a look.
 
