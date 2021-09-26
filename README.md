@@ -41,7 +41,8 @@ Sometimes do you have problems with async global information, including using th
 
 ## Making async/lazy load of components
 
-Once the application gets huge, keep it with good performance is one of the most challenging. A good approach that helps us is to create small chunks and get them smartly. Getting components async/lazy and choose the right moment to do it can help us a lot. vue-cli (using behind the scenes Vue and webpack) give us a nice approach to delay some chunk and reuse them when they are called in more then one place.
+Once the application gets huge, keep it with good performance is one of the most challenging. A good approach that helps us is to create small chunks and get them smartly. Getting components async/lazy and choose the right moment to do it can help us a lot. vue-cli (using behind the scenes Vue and webpack) give us a nice approach to delay some chunks and reuse them when they are called in more than one place.
+
 
 - [Seeing codebase here](https://github.com/open-ish/vue2-template/tree/chore/async-components/src)
 - [You can see the PR with key files here](https://github.com/open-ish/vue2-template/pull/3/files)
